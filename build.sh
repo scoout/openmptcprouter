@@ -213,6 +213,8 @@ EOF
 
 if [ -n "$CUSTOM_FEED" ]; then
 	echo "src-link ${OMR_DIST} $(readlink -f ${CUSTOM_FEED})" >> "$OMR_TARGET/${OMR_KERNEL}/source/feeds.conf"
+        echo "src/gz custom_generic https://raw.githubusercontent.com/lrdrdn/my-opkg-repo/main/generic" >> "$OMR_TARGET/${OMR_KERNEL}/source/feeds.conf"
+        echo "src/gz custom_arch https://raw.githubusercontent.com/lrdrdn/my-opkg-repo/main/x86_64" >> "$OMR_TARGET/${OMR_KERNEL}/source/feeds.conf"
 fi
 
 if [ "$OMR_DIST" = "openmptcprouter" ]; then
