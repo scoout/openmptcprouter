@@ -274,11 +274,10 @@ if [ "$OMR_ALL_PACKAGES" = "yes" ]; then
 	echo 'CONFIG_ALL_NONSHARED=y' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
 fi
 if [ "$OMR_IMG" = "yes" ] && [ "$OMR_TARGET" = "x86_64" ]; then 
-	#echo 'CONFIG_VDI_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
-	#echo 'CONFIG_VMDK_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
-	#echo 'CONFIG_VHDX_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
+	echo '# CONFIG_VDI_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
+	echo '# CONFIG_VMDK_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
+	echo '# CONFIG_VHDX_IMAGES is not set' >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
 fi
-
 if [ "$OMR_PACKAGES" = "full" ]; then
 	echo "CONFIG_PACKAGE_${OMR_DIST}-full=y" >> "$OMR_TARGET/${OMR_KERNEL}/source/.config"
 fi
